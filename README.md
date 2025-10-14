@@ -25,6 +25,9 @@ Por completar
 ## Evaluación
 Por completar
 
+## Tareas
+Todas las tareas serán escritas y documentadas en la plataforma [Linear](https://linear.app/tts-valenciano)
+
 ## Referencias
 [StyleTTS2 Paper](https://arxiv.org/abs/2306.07691)
 
