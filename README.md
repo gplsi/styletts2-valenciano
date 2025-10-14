@@ -9,12 +9,13 @@ Por completar
 
 ## Requisitos
 
-- Python ≥ 3.9  
+- Python = 3.11.9  
 - CUDA: Por completar
 - Librerías principales:
 ```bash
 pip install -r requirements.txt
 ```
+Debes tener ffmpeg version 7 instalado
 
 ## Entrenamiento
 Por completar
