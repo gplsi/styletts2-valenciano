@@ -1,0 +1,7 @@
+datasets[audio]
+penn
+g2p
+demucs
+transformers
+accelerate
+bitsandbytes
