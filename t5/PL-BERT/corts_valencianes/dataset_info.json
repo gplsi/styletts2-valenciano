@@ -1,0 +1,1053 @@
+{
+  "builder_name": "parquet",
+  "citation": "",
+  "config_name": "default",
+  "dataset_name": "corts-valencianes-asr-parquet",
+  "dataset_size": 90907573915,
+  "description": "",
+  "download_checksums": {
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00000-of-00081.parquet": {
+      "num_bytes": 493837360,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00001-of-00081.parquet": {
+      "num_bytes": 489652382,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00002-of-00081.parquet": {
+      "num_bytes": 498886001,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00003-of-00081.parquet": {
+      "num_bytes": 483400684,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00004-of-00081.parquet": {
+      "num_bytes": 477935908,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00005-of-00081.parquet": {
+      "num_bytes": 489932935,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00006-of-00081.parquet": {
+      "num_bytes": 473700933,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00007-of-00081.parquet": {
+      "num_bytes": 502836936,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00008-of-00081.parquet": {
+      "num_bytes": 493908729,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00009-of-00081.parquet": {
+      "num_bytes": 483059862,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00010-of-00081.parquet": {
+      "num_bytes": 486235936,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00011-of-00081.parquet": {
+      "num_bytes": 482431559,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00012-of-00081.parquet": {
+      "num_bytes": 462196718,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00013-of-00081.parquet": {
+      "num_bytes": 456711813,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00014-of-00081.parquet": {
+      "num_bytes": 475090646,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00015-of-00081.parquet": {
+      "num_bytes": 501292813,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00016-of-00081.parquet": {
+      "num_bytes": 503880508,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00017-of-00081.parquet": {
+      "num_bytes": 476229380,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00018-of-00081.parquet": {
+      "num_bytes": 473409800,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00019-of-00081.parquet": {
+      "num_bytes": 476592422,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00020-of-00081.parquet": {
+      "num_bytes": 497845565,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00021-of-00081.parquet": {
+      "num_bytes": 482338291,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00022-of-00081.parquet": {
+      "num_bytes": 480828680,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00023-of-00081.parquet": {
+      "num_bytes": 479127979,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00024-of-00081.parquet": {
+      "num_bytes": 461930796,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00025-of-00081.parquet": {
+      "num_bytes": 479803906,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00026-of-00081.parquet": {
+      "num_bytes": 473436960,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00027-of-00081.parquet": {
+      "num_bytes": 463806454,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00028-of-00081.parquet": {
+      "num_bytes": 477434618,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00029-of-00081.parquet": {
+      "num_bytes": 475027384,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00030-of-00081.parquet": {
+      "num_bytes": 486099919,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00031-of-00081.parquet": {
+      "num_bytes": 492024184,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00032-of-00081.parquet": {
+      "num_bytes": 458876481,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00033-of-00081.parquet": {
+      "num_bytes": 462002748,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00034-of-00081.parquet": {
+      "num_bytes": 483686521,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00035-of-00081.parquet": {
+      "num_bytes": 495674005,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00036-of-00081.parquet": {
+      "num_bytes": 476993090,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00037-of-00081.parquet": {
+      "num_bytes": 475797537,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00038-of-00081.parquet": {
+      "num_bytes": 476104956,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00039-of-00081.parquet": {
+      "num_bytes": 486762370,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00040-of-00081.parquet": {
+      "num_bytes": 480282263,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00041-of-00081.parquet": {
+      "num_bytes": 480919522,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00042-of-00081.parquet": {
+      "num_bytes": 461582698,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00043-of-00081.parquet": {
+      "num_bytes": 479351572,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00044-of-00081.parquet": {
+      "num_bytes": 471400555,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00045-of-00081.parquet": {
+      "num_bytes": 483798088,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00046-of-00081.parquet": {
+      "num_bytes": 482305686,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00047-of-00081.parquet": {
+      "num_bytes": 452813331,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00048-of-00081.parquet": {
+      "num_bytes": 456524938,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00049-of-00081.parquet": {
+      "num_bytes": 478743963,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00050-of-00081.parquet": {
+      "num_bytes": 476292754,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00051-of-00081.parquet": {
+      "num_bytes": 474462379,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00052-of-00081.parquet": {
+      "num_bytes": 498541321,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00053-of-00081.parquet": {
+      "num_bytes": 464729612,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00054-of-00081.parquet": {
+      "num_bytes": 469539554,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00055-of-00081.parquet": {
+      "num_bytes": 467121319,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00056-of-00081.parquet": {
+      "num_bytes": 475454253,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00057-of-00081.parquet": {
+      "num_bytes": 470627950,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00058-of-00081.parquet": {
+      "num_bytes": 476252648,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00059-of-00081.parquet": {
+      "num_bytes": 477124230,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00060-of-00081.parquet": {
+      "num_bytes": 455432439,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00061-of-00081.parquet": {
+      "num_bytes": 472821119,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00062-of-00081.parquet": {
+      "num_bytes": 493785710,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00063-of-00081.parquet": {
+      "num_bytes": 498003940,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00064-of-00081.parquet": {
+      "num_bytes": 479642413,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00065-of-00081.parquet": {
+      "num_bytes": 472135971,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00066-of-00081.parquet": {
+      "num_bytes": 458342975,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00067-of-00081.parquet": {
+      "num_bytes": 474908920,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00068-of-00081.parquet": {
+      "num_bytes": 483089029,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00069-of-00081.parquet": {
+      "num_bytes": 476271273,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00070-of-00081.parquet": {
+      "num_bytes": 485150875,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00071-of-00081.parquet": {
+      "num_bytes": 509593863,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00072-of-00081.parquet": {
+      "num_bytes": 481729233,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00073-of-00081.parquet": {
+      "num_bytes": 490904982,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00074-of-00081.parquet": {
+      "num_bytes": 479982847,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00075-of-00081.parquet": {
+      "num_bytes": 477013901,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00076-of-00081.parquet": {
+      "num_bytes": 474810001,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00077-of-00081.parquet": {
+      "num_bytes": 493335987,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00078-of-00081.parquet": {
+      "num_bytes": 477213345,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00079-of-00081.parquet": {
+      "num_bytes": 473087938,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_short-00080-of-00081.parquet": {
+      "num_bytes": 469812238,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_test_short-00000-of-00002.parquet": {
+      "num_bytes": 465044956,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_test_short-00001-of-00002.parquet": {
+      "num_bytes": 502550477,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_dev_short-00000-of-00002.parquet": {
+      "num_bytes": 504588886,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_dev_short-00001-of-00002.parquet": {
+      "num_bytes": 487854083,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00000-of-00077.parquet": {
+      "num_bytes": 494849823,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00001-of-00077.parquet": {
+      "num_bytes": 490495111,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00002-of-00077.parquet": {
+      "num_bytes": 479387421,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00003-of-00077.parquet": {
+      "num_bytes": 479178939,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00004-of-00077.parquet": {
+      "num_bytes": 500519771,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00005-of-00077.parquet": {
+      "num_bytes": 483247787,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00006-of-00077.parquet": {
+      "num_bytes": 466984159,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00007-of-00077.parquet": {
+      "num_bytes": 480530281,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00008-of-00077.parquet": {
+      "num_bytes": 489255634,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00009-of-00077.parquet": {
+      "num_bytes": 491088836,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00010-of-00077.parquet": {
+      "num_bytes": 467216865,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00011-of-00077.parquet": {
+      "num_bytes": 527202725,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00012-of-00077.parquet": {
+      "num_bytes": 453308748,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00013-of-00077.parquet": {
+      "num_bytes": 485774301,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00014-of-00077.parquet": {
+      "num_bytes": 463383332,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00015-of-00077.parquet": {
+      "num_bytes": 483673632,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00016-of-00077.parquet": {
+      "num_bytes": 482841368,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00017-of-00077.parquet": {
+      "num_bytes": 485973597,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00018-of-00077.parquet": {
+      "num_bytes": 489931685,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00019-of-00077.parquet": {
+      "num_bytes": 498409881,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00020-of-00077.parquet": {
+      "num_bytes": 497367011,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00021-of-00077.parquet": {
+      "num_bytes": 456854095,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00022-of-00077.parquet": {
+      "num_bytes": 498423739,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00023-of-00077.parquet": {
+      "num_bytes": 484825881,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00024-of-00077.parquet": {
+      "num_bytes": 511305446,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00025-of-00077.parquet": {
+      "num_bytes": 479393691,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00026-of-00077.parquet": {
+      "num_bytes": 502349322,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00027-of-00077.parquet": {
+      "num_bytes": 505164454,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00028-of-00077.parquet": {
+      "num_bytes": 501680831,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00029-of-00077.parquet": {
+      "num_bytes": 513038460,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00030-of-00077.parquet": {
+      "num_bytes": 471756301,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00031-of-00077.parquet": {
+      "num_bytes": 479311225,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00032-of-00077.parquet": {
+      "num_bytes": 464008831,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00033-of-00077.parquet": {
+      "num_bytes": 490367295,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00034-of-00077.parquet": {
+      "num_bytes": 507448294,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00035-of-00077.parquet": {
+      "num_bytes": 514033739,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00036-of-00077.parquet": {
+      "num_bytes": 472864803,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00037-of-00077.parquet": {
+      "num_bytes": 503484441,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00038-of-00077.parquet": {
+      "num_bytes": 493697090,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00039-of-00077.parquet": {
+      "num_bytes": 465283219,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00040-of-00077.parquet": {
+      "num_bytes": 478114113,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00041-of-00077.parquet": {
+      "num_bytes": 497241157,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00042-of-00077.parquet": {
+      "num_bytes": 477803636,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00043-of-00077.parquet": {
+      "num_bytes": 488506378,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00044-of-00077.parquet": {
+      "num_bytes": 499009294,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00045-of-00077.parquet": {
+      "num_bytes": 485996719,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00046-of-00077.parquet": {
+      "num_bytes": 497519799,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00047-of-00077.parquet": {
+      "num_bytes": 482718892,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00048-of-00077.parquet": {
+      "num_bytes": 512957842,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00049-of-00077.parquet": {
+      "num_bytes": 463826858,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00050-of-00077.parquet": {
+      "num_bytes": 495523180,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00051-of-00077.parquet": {
+      "num_bytes": 514445863,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00052-of-00077.parquet": {
+      "num_bytes": 488833022,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00053-of-00077.parquet": {
+      "num_bytes": 507641418,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00054-of-00077.parquet": {
+      "num_bytes": 480000879,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00055-of-00077.parquet": {
+      "num_bytes": 495829979,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00056-of-00077.parquet": {
+      "num_bytes": 513083063,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00057-of-00077.parquet": {
+      "num_bytes": 483831233,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00058-of-00077.parquet": {
+      "num_bytes": 489796309,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00059-of-00077.parquet": {
+      "num_bytes": 487792320,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00060-of-00077.parquet": {
+      "num_bytes": 505405603,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00061-of-00077.parquet": {
+      "num_bytes": 497467230,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00062-of-00077.parquet": {
+      "num_bytes": 476132373,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00063-of-00077.parquet": {
+      "num_bytes": 484843931,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00064-of-00077.parquet": {
+      "num_bytes": 489874057,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00065-of-00077.parquet": {
+      "num_bytes": 491778005,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00066-of-00077.parquet": {
+      "num_bytes": 458298126,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00067-of-00077.parquet": {
+      "num_bytes": 491284696,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00068-of-00077.parquet": {
+      "num_bytes": 494644973,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00069-of-00077.parquet": {
+      "num_bytes": 467463625,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00070-of-00077.parquet": {
+      "num_bytes": 490418898,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00071-of-00077.parquet": {
+      "num_bytes": 508544539,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00072-of-00077.parquet": {
+      "num_bytes": 472271390,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00073-of-00077.parquet": {
+      "num_bytes": 501031067,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00074-of-00077.parquet": {
+      "num_bytes": 475958341,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00075-of-00077.parquet": {
+      "num_bytes": 476059895,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_short-00076-of-00077.parquet": {
+      "num_bytes": 479253743,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_test_short-00000-of-00003.parquet": {
+      "num_bytes": 363136567,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_test_short-00001-of-00003.parquet": {
+      "num_bytes": 347974583,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_test_short-00002-of-00003.parquet": {
+      "num_bytes": 361682433,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_dev_short-00000-of-00003.parquet": {
+      "num_bytes": 355367147,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_dev_short-00001-of-00003.parquet": {
+      "num_bytes": 341747829,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_dev_short-00002-of-00003.parquet": {
+      "num_bytes": 338858165,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_long-00000-of-00010.parquet": {
+      "num_bytes": 490260807,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_long-00001-of-00010.parquet": {
+      "num_bytes": 459471559,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_long-00002-of-00010.parquet": {
+      "num_bytes": 469122801,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_long-00003-of-00010.parquet": {
+      "num_bytes": 460816728,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_long-00004-of-00010.parquet": {
+      "num_bytes": 469475677,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_long-00005-of-00010.parquet": {
+      "num_bytes": 486578421,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_long-00006-of-00010.parquet": {
+      "num_bytes": 469199937,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_long-00007-of-00010.parquet": {
+      "num_bytes": 458076823,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_long-00008-of-00010.parquet": {
+      "num_bytes": 463463204,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_train_long-00009-of-00010.parquet": {
+      "num_bytes": 470374281,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_test_long-00000-of-00001.parquet": {
+      "num_bytes": 110447797,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/clean_dev_long-00000-of-00001.parquet": {
+      "num_bytes": 104440480,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_long-00000-of-00011.parquet": {
+      "num_bytes": 496035945,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_long-00001-of-00011.parquet": {
+      "num_bytes": 459781431,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_long-00002-of-00011.parquet": {
+      "num_bytes": 466921578,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_long-00003-of-00011.parquet": {
+      "num_bytes": 522249432,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_long-00004-of-00011.parquet": {
+      "num_bytes": 478545627,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_long-00005-of-00011.parquet": {
+      "num_bytes": 497507435,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_long-00006-of-00011.parquet": {
+      "num_bytes": 471601826,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_long-00007-of-00011.parquet": {
+      "num_bytes": 495640958,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_long-00008-of-00011.parquet": {
+      "num_bytes": 479821201,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_long-00009-of-00011.parquet": {
+      "num_bytes": 476448273,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_train_long-00010-of-00011.parquet": {
+      "num_bytes": 493704363,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_test_long-00000-of-00001.parquet": {
+      "num_bytes": 81561019,
+      "checksum": null
+    },
+    "hf://datasets/javiimts/corts-valencianes-asr-parquet@74ba1800ea5d4d84e114a6f920ce601401d074e4/data/other_dev_long-00000-of-00001.parquet": {
+      "num_bytes": 94277972,
+      "checksum": null
+    }
+  },
+  "download_size": 90903508615,
+  "features": {
+    "phonemes": {
+      "feature": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "_type": "List"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 181811082530,
+  "splits": {
+    "clean_train_short": {
+      "name": "clean_train_short",
+      "num_bytes": 38803676550,
+      "num_examples": 44932,
+      "shard_lengths": [
+        655,
+        655,
+        555,
+        655,
+        655,
+        655,
+        555,
+        610,
+        655,
+        655,
+        655,
+        655,
+        655,
+        555,
+        555,
+        610,
+        655,
+        655,
+        655,
+        655,
+        655,
+        610,
+        655,
+        655,
+        655,
+        655,
+        655,
+        610,
+        655,
+        655,
+        655,
+        655,
+        655,
+        610,
+        655,
+        655,
+        655,
+        655,
+        655,
+        610,
+        655,
+        655,
+        655,
+        655,
+        655,
+        555,
+        610,
+        655,
+        655,
+        655,
+        655,
+        654,
+        608,
+        654,
+        654,
+        554,
+        654,
+        654,
+        654,
+        608,
+        654,
+        554,
+        654,
+        654,
+        654,
+        654,
+        608,
+        654,
+        654,
+        654,
+        254
+      ],
+      "dataset_name": "corts-valencianes-asr-parquet"
+    },
+    "clean_test_short": {
+      "name": "clean_test_short",
+      "num_bytes": 967634975,
+      "num_examples": 1325,
+      "shard_lengths": [
+        763,
+        562
+      ],
+      "dataset_name": "corts-valencianes-asr-parquet"
+    },
+    "clean_dev_short": {
+      "name": "clean_dev_short",
+      "num_bytes": 992489139,
+      "num_examples": 1284,
+      "shard_lengths": [
+        642,
+        642
+      ],
+      "dataset_name": "corts-valencianes-asr-parquet"
+    },
+    "other_train_short": {
+      "name": "other_train_short",
+      "num_bytes": 37608982777,
+      "num_examples": 44399,
+      "shard_lengths": [
+        677,
+        677,
+        677,
+        677,
+        677,
+        654,
+        677,
+        677,
+        677,
+        677,
+        677,
+        654,
+        677,
+        677,
+        677,
+        677,
+        677,
+        577,
+        654,
+        677,
+        677,
+        677,
+        677,
+        577,
+        577,
+        677,
+        654,
+        677,
+        677,
+        677,
+        577,
+        677,
+        677,
+        654,
+        677,
+        677,
+        577,
+        677,
+        677,
+        677,
+        654,
+        676,
+        676,
+        676,
+        576,
+        676,
+        576,
+        676,
+        652,
+        576,
+        676,
+        676,
+        676,
+        576,
+        676,
+        676,
+        652,
+        676,
+        676,
+        676,
+        676,
+        676,
+        576,
+        652,
+        576,
+        676,
+        676,
+        376
+      ],
+      "dataset_name": "corts-valencianes-asr-parquet"
+    },
+    "other_test_short": {
+      "name": "other_test_short",
+      "num_bytes": 1072833552,
+      "num_examples": 1467,
+      "shard_lengths": [
+        689,
+        778
+      ],
+      "dataset_name": "corts-valencianes-asr-parquet"
+    },
+    "other_dev_short": {
+      "name": "other_dev_short",
+      "num_bytes": 1036008039,
+      "num_examples": 1267,
+      "shard_lengths": [
+        623,
+        644
+      ],
+      "dataset_name": "corts-valencianes-asr-parquet"
+    },
+    "clean_train_long": {
+      "name": "clean_train_long",
+      "num_bytes": 4696912794,
+      "num_examples": 1286,
+      "shard_lengths": [
+        229,
+        158,
+        229,
+        158,
+        228,
+        156,
+        128
+      ],
+      "dataset_name": "corts-valencianes-asr-parquet"
+    },
+    "clean_test_long": {
+      "name": "clean_test_long",
+      "num_bytes": 110445704,
+      "num_examples": 31,
+      "dataset_name": "corts-valencianes-asr-parquet"
+    },
+    "clean_dev_long": {
+      "name": "clean_dev_long",
+      "num_bytes": 104439019,
+      "num_examples": 31,
+      "dataset_name": "corts-valencianes-asr-parquet"
+    },
+    "other_train_long": {
+      "name": "other_train_long",
+      "num_bytes": 5338319331,
+      "num_examples": 1390,
+      "shard_lengths": [
+        227,
+        154,
+        127,
+        226,
+        152,
+        226,
+        152,
+        126
+      ],
+      "dataset_name": "corts-valencianes-asr-parquet"
+    },
+    "other_test_long": {
+      "name": "other_test_long",
+      "num_bytes": 81557627,
+      "num_examples": 21,
+      "dataset_name": "corts-valencianes-asr-parquet"
+    },
+    "other_dev_long": {
+      "name": "other_dev_long",
+      "num_bytes": 94274408,
+      "num_examples": 27,
+      "dataset_name": "corts-valencianes-asr-parquet"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}
