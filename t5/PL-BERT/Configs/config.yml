@@ -1,9 +1,9 @@
 # --- Configuración General ---
-log_dir: "Checkpoint_PhonemeBERT"
+log_dir: "Checkpoint_PhonemeBERT_2"
 mixed_precision: "fp16"
-data_folder: "corts_valencianes"
-test_data_folder: "corts_valencianes_test" 
-batch_size: 50
+data_folder: "corts_valencianes_2"
+test_data_folder: "corts_valencianes_test_2" 
+batch_size: 20
 save_interval: 5000
 log_interval: 10
 num_process: 1
