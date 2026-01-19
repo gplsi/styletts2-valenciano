@@ -216,6 +216,8 @@ def main(config_path):
             mel_input_length_all = accelerator.gather(mel_input_length) # for balanced load
             mel_len = min([int(mel_input_length_all.min().item() / 2 - 1), max_len // 2])
             mel_len_st = int(mel_input_length.min().item() / 2 - 1)
+            mel_len_st = max(mel_len_st, 50)
+            mel_len = max(mel_len, 50)  # Ensure minimum length
         
             en = []
             gt = []
@@ -224,6 +226,10 @@ def main(config_path):
             
             for bib in range(len(mel_input_length)):
                 mel_length = int(mel_input_length[bib].item() / 2)
+                
+                if mel_length <= mel_len or mel_length <= mel_len_st:
+                    continue  # Skip samples that are too short
+                
 
                 random_start = np.random.randint(0, mel_length - mel_len)
                 en.append(asr[bib, :, random_start:random_start+mel_len])
@@ -235,6 +241,9 @@ def main(config_path):
                 # style reference (better to be different from the GT)
                 random_start = np.random.randint(0, mel_length - mel_len_st)
                 st.append(mels[bib, :, (random_start * 2):((random_start+mel_len_st) * 2)])
+
+            if len(en) == 0:
+                continue  # Skip this batch if no valid samples
 
             en = torch.stack(en)
             gt = torch.stack(gt).detach()
@@ -357,6 +366,9 @@ def main(config_path):
                 # get clips
                 mel_input_length_all = accelerator.gather(mel_input_length) # for balanced load
                 mel_len = min([int(mel_input_length.min().item() / 2 - 1), max_len // 2])
+
+                mel_len = max(mel_len, 50)  # Ensure minimum length for style_encoder
+
                 
                 en = []
                 gt = []
@@ -364,11 +376,17 @@ def main(config_path):
                 for bib in range(len(mel_input_length)):
                     mel_length = int(mel_input_length[bib].item() / 2)
 
+                    if mel_length <= mel_len:
+                        continue  # Skip samples that are too short
+
                     random_start = np.random.randint(0, mel_length - mel_len)
                     en.append(asr[bib, :, random_start:random_start+mel_len])
                     gt.append(mels[bib, :, (random_start * 2):((random_start+mel_len) * 2)])
                     y = waves[bib][(random_start * 2) * 300:((random_start+mel_len) * 2) * 300]
                     wav.append(torch.from_numpy(y).to('cuda'))
+
+                if len(en) == 0:
+                    continue  # Skip this batch if no valid samples
 
                 wav = torch.stack(wav).float().detach()
 
@@ -387,6 +405,10 @@ def main(config_path):
 
         if accelerator.is_main_process:
             print('Epochs:', epoch + 1)
+            if iters_test == 0:
+                log_print('Validation: No valid samples in this epoch\n\n\n\n', logger)
+                print('Warning: No valid validation samples')
+                continue
             log_print('Validation loss: %.3f' % (loss_test / iters_test) + '\n\n\n\n', logger)
             print('\n\n\n')
             writer.add_scalar('eval/mel_loss', loss_test / iters_test, epoch + 1)
@@ -396,6 +418,10 @@ def main(config_path):
             with torch.no_grad():
                 for bib in range(len(asr)):
                     mel_length = int(mel_input_length[bib].item())
+
+                    if mel_length < 80:
+                        continue
+                
                     gt = mels[bib, :, :mel_length].unsqueeze(0)
                     en = asr[bib, :, :mel_length // 2].unsqueeze(0)
                                         

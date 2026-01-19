@@ -1,0 +1,5 @@
+{
+  "word_separator": 50255,
+  "num_vocab": 19022,
+  "tokenizer": "projecte-aina/roberta-base-ca-v2"
+}
