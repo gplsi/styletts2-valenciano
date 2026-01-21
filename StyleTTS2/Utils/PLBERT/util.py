@@ -11,6 +11,16 @@ class CustomAlbert(AlbertModel):
         # Only return the last_hidden_state
         return outputs.last_hidden_state
 
+from transformers import AlbertConfig, AlbertModel
+
+class CustomAlbert(AlbertModel):
+    def forward(self, *args, **kwargs):
+        # Call the original forward method
+        outputs = super().forward(*args, **kwargs)
+
+        # Only return the last_hidden_state
+        return outputs.last_hidden_state
+
 
 def load_plbert(log_dir):
     config_path = os.path.join(log_dir, "config.yml")
@@ -30,8 +40,12 @@ def load_plbert(log_dir):
     checkpoint = torch.load(log_dir + "/step_" + str(iters) + ".t7", map_location='cpu')
     state_dict = checkpoint['net']
     from collections import OrderedDict
+    from collections import OrderedDict
     new_state_dict = OrderedDict()
     for k, v in state_dict.items():
+        name = k[7:] # remove `module.`
+        if name.startswith('encoder.'):
+            name = name[8:] # remove `encoder.`
         name = k[7:] # remove `module.`
         if name.startswith('encoder.'):
             name = name[8:] # remove `encoder.`
@@ -40,3 +54,4 @@ def load_plbert(log_dir):
     bert.load_state_dict(new_state_dict, strict=False)
     
     return bert
+

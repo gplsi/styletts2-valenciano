@@ -216,6 +216,8 @@ def main(config_path):
             mel_input_length_all = accelerator.gather(mel_input_length) # for balanced load
             mel_len = min([int(mel_input_length_all.min().item() / 2 - 1), max_len // 2])
             mel_len_st = int(mel_input_length.min().item() / 2 - 1)
+            mel_len_st = max(mel_len_st, 50)
+            mel_len = max(mel_len, 50)  # Ensure minimum length
         
             en = []
             gt = []
@@ -224,6 +226,10 @@ def main(config_path):
             
             for bib in range(len(mel_input_length)):
                 mel_length = int(mel_input_length[bib].item() / 2)
+                
+                if mel_length <= mel_len or mel_length <= mel_len_st:
+                    continue  # Skip samples that are too short
+                
 
                 random_start = np.random.randint(0, mel_length - mel_len)
                 en.append(asr[bib, :, random_start:random_start+mel_len])
@@ -235,6 +241,9 @@ def main(config_path):
                 # style reference (better to be different from the GT)
                 random_start = np.random.randint(0, mel_length - mel_len_st)
                 st.append(mels[bib, :, (random_start * 2):((random_start+mel_len_st) * 2)])
+
+            if len(en) < 2:
+                continue  # Skip batch if less than 2 valid samples (batch_size=1 causes dimension issues)
 
             en = torch.stack(en)
             gt = torch.stack(gt).detach()
@@ -357,6 +366,9 @@ def main(config_path):
                 # get clips
                 mel_input_length_all = accelerator.gather(mel_input_length) # for balanced load
                 mel_len = min([int(mel_input_length.min().item() / 2 - 1), max_len // 2])
+
+                mel_len = max(mel_len, 50)  # Ensure minimum length for style_encoder
+
                 
                 en = []
                 gt = []
@@ -364,11 +376,17 @@ def main(config_path):
                 for bib in range(len(mel_input_length)):
                     mel_length = int(mel_input_length[bib].item() / 2)
 
+                    if mel_length <= mel_len:
+                        continue  # Skip samples that are too short
+
                     random_start = np.random.randint(0, mel_length - mel_len)
                     en.append(asr[bib, :, random_start:random_start+mel_len])
                     gt.append(mels[bib, :, (random_start * 2):((random_start+mel_len) * 2)])
                     y = waves[bib][(random_start * 2) * 300:((random_start+mel_len) * 2) * 300]
                     wav.append(torch.from_numpy(y).to('cuda'))
+
+                if len(en) < 2:
+                    continue  # Skip batch if less than 2 valid samples (batch_size=1 causes dimension issues)
 
                 wav = torch.stack(wav).float().detach()
 
@@ -387,31 +405,53 @@ def main(config_path):
 
         if accelerator.is_main_process:
             print('Epochs:', epoch + 1)
+            if iters_test == 0:
+                log_print('Validation: No valid samples in this epoch\n\n\n\n', logger)
+                print('Warning: No valid validation samples')
+                continue
             log_print('Validation loss: %.3f' % (loss_test / iters_test) + '\n\n\n\n', logger)
             print('\n\n\n')
             writer.add_scalar('eval/mel_loss', loss_test / iters_test, epoch + 1)
             attn_image = get_image(s2s_attn[0].cpu().numpy().squeeze())
             writer.add_figure('eval/attn', attn_image, epoch)
             
-            with torch.no_grad():
-                for bib in range(len(asr)):
-                    mel_length = int(mel_input_length[bib].item())
-                    gt = mels[bib, :, :mel_length].unsqueeze(0)
-                    en = asr[bib, :, :mel_length // 2].unsqueeze(0)
-                                        
-                    F0_real, _, _ = model.pitch_extractor(gt.unsqueeze(1))
-                    F0_real = F0_real.unsqueeze(0)
-                    s = model.style_encoder(gt.unsqueeze(1))
-                    real_norm = log_norm(gt.unsqueeze(1)).squeeze(1)
-                    
-                    y_rec = model.decoder(en, F0_real, real_norm, s)
-                    
-                    writer.add_audio('eval/y' + str(bib), y_rec.cpu().numpy().squeeze(), epoch, sample_rate=sr)
-                    if epoch == 0:
-                        writer.add_audio('gt/y' + str(bib), waves[bib].squeeze(), epoch, sample_rate=sr)
-                    
-                    if bib >= 6:
-                        break
+            # Audio generation for TensorBoard - skip if it fails (batch_size=1 can cause issues)
+            try:
+                with torch.no_grad():
+                    for bib in range(len(asr)):
+                        mel_length = int(mel_input_length[bib].item())
+
+                        if mel_length < 80:
+                            continue
+
+                        gt = mels[bib, :, :mel_length].unsqueeze(0)
+                        en = asr[bib, :, :mel_length // 2].unsqueeze(0)
+
+                        F0_real, _, _ = model.pitch_extractor(gt.unsqueeze(1))
+                        # Fix F0 shape for batch_size=1 with DDP
+                        # Expected: [1, length], but may come as [length, 1] or [length]
+                        if F0_real.dim() == 1:
+                            F0_real = F0_real.unsqueeze(0)
+                        elif F0_real.dim() == 2 and F0_real.shape[0] > F0_real.shape[1]:
+                            F0_real = F0_real.transpose(0, 1)
+                        s = model.style_encoder(gt.unsqueeze(1))
+                        real_norm = log_norm(gt.unsqueeze(1)).squeeze(1)
+                        # Fix real_norm shape similarly
+                        if real_norm.dim() == 1:
+                            real_norm = real_norm.unsqueeze(0)
+                        elif real_norm.dim() == 2 and real_norm.shape[0] > real_norm.shape[1]:
+                            real_norm = real_norm.transpose(0, 1)
+
+                        y_rec = model.decoder(en, F0_real, real_norm, s)
+
+                        writer.add_audio('eval/y' + str(bib), y_rec.cpu().numpy().squeeze(), epoch, sample_rate=sr)
+                        if epoch == 0:
+                            writer.add_audio('gt/y' + str(bib), waves[bib].squeeze(), epoch, sample_rate=sr)
+
+                        if bib >= 6:
+                            break
+            except Exception as e:
+                print(f'Warning: Audio generation for TensorBoard failed: {e}')
 
             if epoch % saving_epoch == 0:
                 if (loss_test / iters_test) < best_loss:
