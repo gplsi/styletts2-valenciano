@@ -9,7 +9,7 @@ device: "cuda"
 epochs_1st: 100 # TEST: cambiar a 100 para entrenamiento real
 epochs_2nd: 50 #100  # epochs para Stage 2 (joint training)
 batch_size: 8   
-max_len: 400     # máximo de frames
+max_len: 600     # máximo de frames
 
 pretrained_model: ""
 second_stage_load_pretrained: true
