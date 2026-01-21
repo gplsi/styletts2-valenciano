@@ -6,9 +6,9 @@ first_stage_path: "first_stage.pth"
 save_freq: 10
 log_interval: 10
 device: "cuda"
-epochs_1st: 100 #200  # epochs para Stage 1 (pre-training)
+epochs_1st: 100 # TEST: cambiar a 100 para entrenamiento real
 epochs_2nd: 50 #100  # epochs para Stage 2 (joint training)
-batch_size: 4   # reducido para GPU con menos VRAM (ajustar según disponible)
+batch_size: 8   
 max_len: 400     # máximo de frames
 
 pretrained_model: ""
