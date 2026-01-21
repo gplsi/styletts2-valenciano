@@ -22,10 +22,10 @@ ASR_path: "Utils/ASR/epoch_00080.pth"
 PLBERT_dir: "Utils/PLBERT/"
 
 data_params:
-  train_data: "/media/datos1/tts-valenciano/styletts2_corts_dataset/train_list.txt"
-  val_data: "/media/datos1/tts-valenciano/styletts2_corts_dataset/val_list.txt"
+  train_data: "Data/train_list.txt"
+  val_data: "Data/val_list.txt"
   root_path: "/media/datos1/tts-valenciano/styletts2_corts_dataset/"  # directorio raíz donde está wavs/
-  OOD_data: "/media/datos1/tts-valenciano/styletts2_corts_dataset/OOD_texts.txt"
+  OOD_data: "Data/OOD_texts.txt"
   min_length: 50
 
 preprocess_params:
