@@ -40,15 +40,49 @@ styletts2-valenciano/
 
 ## Requisitos
 
-- Python = 3.10.19  
-- Librerías principales:
+- Python 3.12.3
+- ffmpeg version 7
+
+### Instalación
+
 ```bash
+# Crear entorno virtual
+python -m venv .venv
+source .venv/bin/activate
+
+# Instalar dependencias
 pip install -r requirements.txt
 ```
-Debes tener ffmpeg version 7 instalado
 
 ## Entrenamiento
+
+El entrenamiento de StyleTTS2 se realiza en dos etapas:
+
+### Stage 1: Pre-training (Acoustic Model)
+
+```bash
+cd StyleTTS2
+python -u train_first.py --config_path Configs/config_valenciano.yml 2>&1 | tee train_first.log
+```
+
+Este stage entrena el decoder, style encoder, text encoder y pitch extractor. La configuración por defecto usa:
+- `epochs_1st: 100`
+- `batch_size: 8`
+- `TMA_epoch: 25` (Text-Mel Alignment empieza en epoch 25)
+
+Los checkpoints se guardan en el directorio especificado en `log_dir` del config.
+
+### Stage 2: Joint Training (con Diffusion)
+
 Por completar
+
+### Monitorización
+
+Puedes monitorizar el entrenamiento con TensorBoard:
+
+```bash
+tensorboard --logdir /ruta/a/Models/Valenciano/tensorboard
+```
 
 ## Inferencia (síntesis de voz)
 Utiliza la libreta ./StyleTTS2/Demo/Inference_LJSpeech.ipynb
