@@ -62,7 +62,7 @@ El entrenamiento de StyleTTS2 se realiza en dos etapas:
 
 ```bash
 cd StyleTTS2
-python -u train_first.py --config_path Configs/config_valenciano.yml 2>&1 | tee train_first.log
+python -u train_first.py --config_path Configs/config_valenciano.yml
 ```
 
 Este stage entrena el decoder, style encoder, text encoder y pitch extractor. La configuración por defecto usa:
