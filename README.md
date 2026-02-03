@@ -54,16 +54,62 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
+### Descargar PL-BERT
+
+El modelo requiere los pesos de PL-BERT entrenado para valenciano. Descárgalos desde Hugging Face:
+
+```bash
+# Crear directorio para PL-BERT
+mkdir -p StyleTTS2/Utils/PLBERT/valenciano
+
+# Descargar los archivos necesarios
+cd StyleTTS2/Utils/PLBERT/valenciano
+wget https://huggingface.co/javiimts/plbert-valenciano/resolve/main/step_5000.t7
+wget https://huggingface.co/javiimts/plbert-valenciano/resolve/main/config.yml
+```
+
+O clona el repositorio completo:
+
+```bash
+cd StyleTTS2/Utils/PLBERT
+git lfs install
+git clone https://huggingface.co/javiimts/plbert-valenciano
+```
+
 ## Entrenamiento
 
-El entrenamiento de StyleTTS2 se realiza en dos etapas:
+El entrenamiento de StyleTTS2 se realiza en dos etapas.
+
+### Configuración
+
+Antes de entrenar, edita `StyleTTS2/Configs/config_valenciano.yml` y modifica las siguientes rutas:
+
+| Parámetro | Descripción |
+|-----------|-------------|
+| `log_dir` | Directorio donde se guardarán los checkpoints y logs |
+| `data_params.root_path` | Directorio raíz donde se encuentra la carpeta con los `.wav` |
 
 ### Stage 1: Pre-training (Acoustic Model)
 
+#### Una sola GPU
+
+El script usa `accelerate` internamente con DDP, pero para **una sola GPU** no es necesario configurar nada. Simplemente ejecuta:
+
 ```bash
 cd StyleTTS2
-python -u train_first.py --config_path Configs/config_valenciano.yml 2>&1 | tee train_first.log
+python -u train_first.py --config_path Configs/config_valenciano.yml
 ```
+
+#### Multi-GPU
+
+Para entrenar con **múltiples GPUs**, usa `accelerate launch`:
+
+```bash
+cd StyleTTS2
+accelerate launch --multi_gpu --num_processes=N train_first.py --config_path Configs/config_valenciano.yml
+```
+
+Donde `N` es el número de GPUs a utilizar.
 
 Este stage entrena el decoder, style encoder, text encoder y pitch extractor. La configuración por defecto usa:
 - `epochs_1st: 100`
@@ -73,6 +119,8 @@ Este stage entrena el decoder, style encoder, text encoder y pitch extractor. La
 Los checkpoints se guardan en el directorio especificado en `log_dir` del config.
 
 ### Stage 2: Joint Training (con Diffusion)
+
+**Nota:** El autor del repositorio original indica que DDP no funciona correctamente en Stage 2.
 
 Por completar
 
