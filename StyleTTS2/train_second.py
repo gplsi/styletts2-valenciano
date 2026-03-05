@@ -292,6 +292,15 @@ def main(config_path):
 
             # compute the style of the entire utterance
             # this operation cannot be done in batch because of the avgpool layer (may need to work on masked avgpool)
+
+            # Style encoder has 4x half-downsample + 5x5 conv, needs >= 80 mel frames
+            if mel_input_length.min().item() < 80:
+                continue
+
+            # PL-BERT max_position_embeddings is 512, skip longer sequences
+            if texts.shape[1] > 512:
+                continue
+
             ss = []
             gs = []
             for bib in range(len(mel_input_length)):
@@ -305,10 +314,6 @@ def main(config_path):
             s_dur = torch.stack(ss).squeeze()  # global prosodic styles
             gs = torch.stack(gs).squeeze() # global acoustic styles
             s_trg = torch.cat([gs, s_dur], dim=-1).detach() # ground truth for denoiser
-
-            # PL-BERT max_position_embeddings is 512, skip longer sequences
-            if texts.shape[1] > 512:
-                continue
 
             bert_dur = model.bert(texts, attention_mask=(~text_mask).int())
             d_en = model.bert_encoder(bert_dur).transpose(-1, -2) 
@@ -597,6 +602,13 @@ def main(config_path):
 
                         d_gt = s2s_attn_mono.sum(axis=-1).detach()
 
+                    # Style encoder has 4x half-downsample + 5x5 conv, needs >= 80 mel frames
+                    if mel_input_length.min().item() < 80:
+                        continue
+
+                    if texts.shape[1] > 512:
+                        continue
+
                     ss = []
                     gs = []
 
@@ -611,9 +623,6 @@ def main(config_path):
                     s = torch.stack(ss).squeeze()
                     gs = torch.stack(gs).squeeze()
                     s_trg = torch.cat([s, gs], dim=-1).detach()
-
-                    if texts.shape[1] > 512:
-                        continue
 
                     bert_dur = model.bert(texts, attention_mask=(~text_mask).int())
                     d_en = model.bert_encoder(bert_dur).transpose(-1, -2) 
