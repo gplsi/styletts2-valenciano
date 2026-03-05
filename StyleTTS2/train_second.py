@@ -306,6 +306,10 @@ def main(config_path):
             gs = torch.stack(gs).squeeze() # global acoustic styles
             s_trg = torch.cat([gs, s_dur], dim=-1).detach() # ground truth for denoiser
 
+            # PL-BERT max_position_embeddings is 512, skip longer sequences
+            if texts.shape[1] > 512:
+                continue
+
             bert_dur = model.bert(texts, attention_mask=(~text_mask).int())
             d_en = model.bert_encoder(bert_dur).transpose(-1, -2) 
             
@@ -607,6 +611,9 @@ def main(config_path):
                     s = torch.stack(ss).squeeze()
                     gs = torch.stack(gs).squeeze()
                     s_trg = torch.cat([s, gs], dim=-1).detach()
+
+                    if texts.shape[1] > 512:
+                        continue
 
                     bert_dur = model.bert(texts, attention_mask=(~text_mask).int())
                     d_en = model.bert_encoder(bert_dur).transpose(-1, -2) 
