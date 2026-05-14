@@ -258,8 +258,8 @@ cp /ruta/log_dir/config.yml          StyleTTS2/Models/LJSpeech/
 
 Abre uno de los notebooks de inferencia:
 
-- **Sin audio de referencia** (single-speaker puro): [`StyleTTS2/Demo/Inference_LJSpeech.ipynb`](StyleTTS2/Demo/Inference_LJSpeech.ipynb)
-- **Con audio de referencia** (mejor calidad si has entrenado con multi-speaker mezclado): [`StyleTTS2/Colab/StyleTTS2_Demo_LibriTTS.ipynb`](StyleTTS2/Colab/StyleTTS2_Demo_LibriTTS.ipynb)
+- Sin audio de referencia: [`StyleTTS2/Demo/Inference_LJSpeech.ipynb`](StyleTTS2/Demo/Inference_LJSpeech.ipynb)
+- Con audio de referencia (recomendado, ver Limitaciones en el README principal): [`StyleTTS2/Colab/StyleTTS2_Demo_LibriTTS.ipynb`](StyleTTS2/Colab/StyleTTS2_Demo_LibriTTS.ipynb)
 
 Edita la celda que carga el modelo para que apunte a tu checkpoint y ejecuta.
 
