@@ -26,7 +26,7 @@ data_params:
   val_data: "Data/val_list.txt"
   root_path: "/media/datos1/tts-valenciano/styletts2_corts_dataset/"  # directorio raíz donde está wavs/
   OOD_data: "Data/OOD_texts.txt"
-  min_length: 50
+  min_length: 100
 
 preprocess_params:
   sr: 24000
