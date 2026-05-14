@@ -1,9 +1,43 @@
+# Entornos y caches
+.env
 *.env
-__pycache__/
-Checkpoint_*
 .venv*/
-Mel-Band-Roformer-Vocal-Model/
-espeak-ng/
+__pycache__/
 out/
-*.arrow
 wandb/
+
+# Datasets y formatos pesados regenerables
+*.arrow
+*.t7
+*.pth
+*.safetensors
+*.ckpt
+
+# Excepciones: modelos auxiliares pre-entrenados que sí van en el repo
+!StyleTTS2/Utils/ASR/epoch_00080.pth
+!StyleTTS2/Utils/JDC/bst.t7
+
+# T02 (experimentos descartados, pesados)
+Mel-Band-Roformer-Vocal-Model/
+t2/clearervoice/
+
+# T05 (PL-BERT) — salidas regenerables
+t5/checkpoints_valenciano/
+t5/dataset_valenciano/
+t5/token_maps_valenciano.pkl
+Checkpoint_*
+
+# T06 (StyleTTS2) — modelos locales y logs
+StyleTTS2/Models/LJSpeech/*.pth
+StyleTTS2/Models/LJSpeech/tensorboard/
+StyleTTS2/Utils/PLBERT/theirs/
+
+# espeak-ng compilado localmente
+espeak-ng/
+
+# Credenciales y secretos
+service_account.json
+*credentials*.json
+*service-account*.json
+*.pem
+*.key
