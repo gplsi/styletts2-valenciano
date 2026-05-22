@@ -14,7 +14,7 @@ Estos archivos son la entrada directa de las dos fases de entrenamiento de Style
 | Input | Origen | Descripción |
 |-------|--------|-------------|
 | Dataset original | [`projecte-aina/corts_valencianes_asr_a`](https://huggingface.co/datasets/projecte-aina/corts_valencianes_asr_a) | Audio + texto de las Corts Valencianes |
-| Versión parquet | [`javiimts/corts-valencianes-asr-parquet`](https://huggingface.co/datasets/javiimts/corts-valencianes-asr-parquet) | Re-subida del original como parquet (el original usa loading scripts, ya no soportados) |
+| Versión parquet | [`gplsi/corts-valencianes-asr`](https://huggingface.co/datasets/gplsi/corts-valencianes-asr) | Re-subida del original como parquet (el original usa loading scripts, ya no soportados) |
 
 ## Outputs
 
@@ -41,7 +41,7 @@ wavs/777d0be485c32fc946d21f5b13eebf5e.wav|el seɲˈoɾ kˈams χeɾˈaɾðo kˈa
 
 ### Paso 1 — Convertir el dataset original a parquet
 
-El dataset original (`projecte-aina/corts_valencianes_asr_a`) usa un loading script de HuggingFace que ya no es compatible con las versiones recientes de la librería `datasets`. Por eso re-subimos el dataset a [`javiimts/corts-valencianes-asr-parquet`](https://huggingface.co/datasets/javiimts/corts-valencianes-asr-parquet) en formato parquet.
+El dataset original (`projecte-aina/corts_valencianes_asr_a`) usa un loading script de HuggingFace que ya no es compatible con las versiones recientes de la librería `datasets`. Por eso re-subimos el dataset a [`gplsi/corts-valencianes-asr`](https://huggingface.co/datasets/gplsi/corts-valencianes-asr) en formato parquet.
 
 
 ### Paso 2 — Generar wavs y listas StyleTTS2
@@ -51,7 +51,7 @@ Notebook: [`dataset_conversion.ipynb`](dataset_conversion.ipynb)
 Lo que hace, por celda:
 
 1. **Cell 1** — Configura el fonemizador `phonemizer` con backend `espeak` y variante `ca-va` (valenciano). Ver [t3](../t3/README.md) para la justificación de esta elección.
-2. **Cell 2** — Carga el dataset desde HuggingFace (`javiimts/corts-valencianes-asr-parquet`).
+2. **Cell 2** — Carga el dataset desde HuggingFace (`gplsi/corts-valencianes-asr`).
 3. **Cells 3-4** — Inspección de splits y estructura.
 4. **Cell 6** — Crea el directorio de salida y la subcarpeta `wavs/`.
 5. **Cell 7** — Define `map_generate_batched`: para cada muestra fonemiza el texto, guarda el WAV con su `identifier` y produce una línea con formato StyleTTS2.

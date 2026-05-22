@@ -91,7 +91,7 @@ Tras comparar con la implementación de referencia y entender mejor el paper, qu
 2. El enfoque char-level es más robusto: sin OOV, sin tokenizador adicional que mantener.
 3. La supervisión semántica vía RoBERTa-ca (punto 2 de la sección anterior) ya aporta información a nivel de palabra como tarea auxiliar — más limpio que mezclar ambos roles en la entrada.
 
-El modelo PL-BERT publicado en [`gplsi/PL-BERT`](https://huggingface.co/gplsi/PL-BERT) usa **char-level + RoBERTa-ca como etiquetas**, no este WordPiece.
+El modelo PL-BERT publicado en [`gplsi/PL-BERT-va`](https://huggingface.co/gplsi/PL-BERT-va) usa **char-level + RoBERTa-ca como etiquetas**, no este WordPiece.
 
 ## Inputs / Outputs (resumen)
 

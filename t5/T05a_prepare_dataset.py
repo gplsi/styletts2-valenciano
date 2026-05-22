@@ -20,7 +20,7 @@ ROBERTA_CA_TOKENIZER = "projecte-aina/roberta-base-ca-v2"
 
 def parse_args():
     p = argparse.ArgumentParser()
-    p.add_argument("--dataset", default="javiimts/corts-valencianes-asr-parquet",
+    p.add_argument("--dataset", default="gplsi/corts-valencianes-asr",
                    help="ID del dataset en HuggingFace")
     p.add_argument("--splits", nargs="+",
                    default=["clean_train_short", "other_train_short"],

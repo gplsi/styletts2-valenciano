@@ -44,7 +44,7 @@ HUGGINGFACE_TOKEN=hf_xxxxxxxxxxxxxxxxx
 
 ### 1.1 Si usas Corts Valencianes (default)
 
-No tienes que hacer nada — el script de T02 ya apunta a `javiimts/corts-valencianes-asr-parquet`.
+No tienes que hacer nada — el script de T02 ya apunta a `gplsi/corts-valencianes-asr`.
 
 ### 1.2 Si usas otro corpus
 
@@ -54,7 +54,7 @@ Sube tu dataset a HuggingFace en formato parquet con estas columnas:
 - `audio` (Audio) — el audio (cualquier sample rate)
 
 Luego edita [`t2/dataset_conversion.ipynb`](t2/dataset_conversion.ipynb):
-- Cell 2: cambia `load_dataset("javiimts/corts-valencianes-asr-parquet")` por tu dataset.
+- Cell 2: cambia `load_dataset("gplsi/corts-valencianes-asr")` por tu dataset.
 - Cell 9: ajusta los nombres de splits a los del tuyo (`train_splits`, `val_splits`, `ood_splits`).
 
 ---
@@ -165,7 +165,7 @@ cp t5/checkpoints_valenciano/step_50000.t7 StyleTTS2/Utils/PLBERT/step_50000.t7
 
 > Como alternativa: si no quieres entrenar PL-BERT, descarga el nuestro desde HuggingFace:
 > ```bash
-> huggingface-cli download gplsi/PL-BERT step_50000.t7 config.yml --local-dir StyleTTS2/Utils/PLBERT/
+> huggingface-cli download gplsi/PL-BERT-va step_50000.t7 config.yml --local-dir StyleTTS2/Utils/PLBERT/
 > ```
 
 ---

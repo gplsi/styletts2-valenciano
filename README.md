@@ -6,9 +6,9 @@ Adaptación del modelo [StyleTTS2](https://github.com/yl4579/StyleTTS2) para gen
 
 | Recurso | Enlace |
 |---------|--------|
-| Modelo final | [gplsi/styletts2-valenciano](https://huggingface.co/gplsi/styletts2-valenciano) |
-| PL-BERT valenciano | [gplsi/PL-BERT](https://huggingface.co/gplsi/PL-BERT) |
-| Dataset (parquet) | [javiimts/corts-valencianes-asr-parquet](https://huggingface.co/datasets/javiimts/corts-valencianes-asr-parquet) |
+| Modelo final | [gplsi/StyleTTS2-va](https://huggingface.co/gplsi/StyleTTS2-va) |
+| PL-BERT valenciano | [gplsi/PL-BERT-va](https://huggingface.co/gplsi/PL-BERT-va) |
+| Dataset (parquet) | [gplsi/corts-valencianes-asr](https://huggingface.co/datasets/gplsi/corts-valencianes-asr) |
 | Paper StyleTTS2 | [arXiv 2306.07691](https://arxiv.org/abs/2306.07691) |
 | Repositorio | [javimosa/styletts2-valenciano](https://github.com/javimosa/styletts2-valenciano) |
 
@@ -83,12 +83,12 @@ Instalación completa en [TRAINING.md](TRAINING.md#0-pre-requisitos).
 ```bash
 # Descargar modelo y PL-BERT desde HuggingFace
 mkdir -p StyleTTS2/Models/LJSpeech
-huggingface-cli download gplsi/styletts2-valenciano \
+huggingface-cli download gplsi/StyleTTS2-va \
     Models/LJSpeech/epoch_2nd_00100.pth \
     Models/LJSpeech/config.yml \
     --local-dir StyleTTS2/
 
-huggingface-cli download gplsi/PL-BERT \
+huggingface-cli download gplsi/PL-BERT-va \
     step_50000.t7 config.yml util.py \
     --local-dir StyleTTS2/Utils/PLBERT/
 

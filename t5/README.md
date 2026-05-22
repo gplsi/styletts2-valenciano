@@ -4,7 +4,7 @@
 
 Entrenar un encoder Transformer (Albert) que produzca representaciones contextuales de los fonemas. Estas representaciones son la entrada del **Prosodic Text Encoder** de StyleTTS2 en su segunda fase de entrenamiento (T06), lo que permite predecir prosodia (duración, tono, energía) consciente del significado de la frase, no sólo de la cadena fonética.
 
-El modelo resultante está publicado en HuggingFace: [`gplsi/PL-BERT`](https://huggingface.co/gplsi/PL-BERT) 
+El modelo resultante está publicado en HuggingFace: [`gplsi/PL-BERT-va`](https://huggingface.co/gplsi/PL-BERT-va) 
 
 ## Idea base: PL-BERT
 
@@ -39,7 +39,7 @@ Script: [`T05a_prepare_dataset.py`](T05a_prepare_dataset.py)
 
 #### Qué hace
 
-1. Carga `javiimts/corts-valencianes-asr-parquet` y concatena los splits `clean_train_short` + `other_train_short` (89 331 muestras).
+1. Carga `gplsi/corts-valencianes-asr` y concatena los splits `clean_train_short` + `other_train_short` (89 331 muestras).
 2. Para cada muestra:
    - **Fonemiza la frase completa** con espeak `ca-va` (preserva efectos entre palabras, ver [t3](../t3/README.md)).
    - **Separa** el resultado por espacios → lista de palabras fonemizadas.
@@ -179,7 +179,7 @@ El script:
 |--------|-----------|
 | Checkpoints (todos los pasos guardados) | `checkpoints_valenciano/step_*.t7` |
 | Checkpoint final | `checkpoints_valenciano/step_50000.t7` |
-| Modelo en HuggingFace | [`gplsi/PL-BERT`](https://huggingface.co/gplsi/PL-BERT) (formato `safetensors` para integrar con StyleTTS2) |
+| Modelo en HuggingFace | [`gplsi/PL-BERT-va`](https://huggingface.co/gplsi/PL-BERT-va) (formato `safetensors` para integrar con StyleTTS2) |
 | Copia para StyleTTS2 | `../StyleTTS2/Utils/PLBERT/` |
 
 ## Cómo se usa el modelo en StyleTTS2
@@ -226,4 +226,4 @@ Las representaciones del encoder se proyectan (por `bert_encoder`) y se entregan
 - [PL-BERT (paper)](https://arxiv.org/abs/2301.08810)
 - [PL-BERT (repo original)](https://github.com/yl4579/PL-BERT)
 - [RoBERTa-ca v2](https://huggingface.co/projecte-aina/roberta-base-ca-v2)
-- [`gplsi/PL-BERT`](https://huggingface.co/gplsi/PL-BERT)
+- [`gplsi/PL-BERT-va`](https://huggingface.co/gplsi/PL-BERT-va)

@@ -224,7 +224,7 @@ def main():
     parser.add_argument('--dry_run', action='store_true',
                         help='Solo mostrar qué se haría sin subir')
     parser.add_argument('--dataset', type=str,
-                        default='javiimts/corts-valencianes-asr-parquet',
+                        default='gplsi/corts-valencianes-asr',
                         help='Nombre del dataset en HuggingFace')
     args = parser.parse_args()
 

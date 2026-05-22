@@ -2,7 +2,7 @@
 
 > Esta carpeta contiene el código de [StyleTTS2](https://github.com/yl4579/StyleTTS2) (ver [`README.md`](README.md) para la documentación original) con modificaciones aplicadas para entrenar el modelo en valenciano sobre el corpus de Corts Valencianes.
 >
-> El modelo final está publicado en [`gplsi/styletts2-valenciano`](https://huggingface.co/gplsi/styletts2-valenciano).
+> El modelo final está publicado en [`gplsi/StyleTTS2-va`](https://huggingface.co/gplsi/StyleTTS2-va).
 
 ## Objetivo
 
@@ -121,7 +121,7 @@ Tres notebooks disponibles según el escenario:
 ### Configurar la inferencia
 
 Editar el notebook elegido para apuntar a:
-- Modelo entrenado: `Models/LJSpeech/epoch_2nd_00100.pth` (o descargado de [`gplsi/styletts2-valenciano`](https://huggingface.co/gplsi/styletts2-valenciano))
+- Modelo entrenado: `Models/LJSpeech/epoch_2nd_00100.pth` (o descargado de [`gplsi/StyleTTS2-va`](https://huggingface.co/gplsi/StyleTTS2-va))
 - Config: `Models/LJSpeech/config.yml` (que se guarda automáticamente con el modelo durante el entrenamiento)
 - Fonemizador: configurado para `ca-va` (ver [t3](../t3/README.md))
 
@@ -227,12 +227,12 @@ Suponiendo que se ha completado T02 (datos en formato StyleTTS2), T03 (fonemizad
 | `Configs/config_valenciano.yml` | nuevo | añadido |
 | `test_stage1.py` | nuevo | añadido |
 | `Demo/Inference_Stage1_Valenciano.ipynb` | nuevo | añadido |
-| `Utils/PLBERT/` | nuevo | añadido (= [`gplsi/PL-BERT`](https://huggingface.co/gplsi/PL-BERT)) |
+| `Utils/PLBERT/` | nuevo | añadido (= [`gplsi/PL-BERT-va`](https://huggingface.co/gplsi/PL-BERT-va)) |
 | `Models/LJSpeech/` | nuevo | añadido (configs y checkpoints; los pesos también en HF) |
 
 ## Referencias
 
 - [Paper StyleTTS2 (arXiv 2306.07691)](https://arxiv.org/abs/2306.07691)
 - [Repo original yl4579/StyleTTS2](https://github.com/yl4579/StyleTTS2)
-- [`gplsi/styletts2-valenciano`](https://huggingface.co/gplsi/styletts2-valenciano) — modelo final
+- [`gplsi/StyleTTS2-va`](https://huggingface.co/gplsi/StyleTTS2-va) — modelo final
 - [Issue #254 (checkpoint key mismatch)](https://github.com/yl4579/StyleTTS2/issues/254)
