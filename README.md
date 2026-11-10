@@ -1,124 +1,149 @@
-# StyleTTS2 para el Valenciano
+# 🗣️ Desarrollo de StyleTTS2 para el Valenciano
 
-Adaptación del modelo [StyleTTS2](https://github.com/yl4579/StyleTTS2) para generar voz sintética en valenciano, entrenada sobre el corpus de les Corts Valencianes. Proyecto desarrollado para la Universidad de Alicante.
+Este proyecto tiene como objetivo adaptar el modelo **[StyleTTS2](https://github.com/yl4579/StyleTTS2)** para generar voz sintética en **valenciano**.
 
-## Recursos publicados
-
-| Recurso | Enlace |
-|---------|--------|
-| Modelo final | [gplsi/StyleTTS2-va](https://huggingface.co/gplsi/StyleTTS2-va) |
-| PL-BERT valenciano | [gplsi/PL-BERT-va](https://huggingface.co/gplsi/PL-BERT-va) |
-| Dataset (parquet) | [gplsi/corts-valencianes-asr](https://huggingface.co/datasets/gplsi/corts-valencianes-asr) |
-| Paper StyleTTS2 | [arXiv 2306.07691](https://arxiv.org/abs/2306.07691) |
-| Repositorio | [javimosa/styletts2-valenciano](https://github.com/javimosa/styletts2-valenciano) |
-
-## Tareas del proyecto
-
-El proyecto se dividió en seis tareas. Cada una tiene su propio README con la documentación detallada.
-
-| Tarea | Carpeta | Descripción |
-|-------|---------|-------------|
-| T01 | [t1/](t1/) | Exploración inicial sobre LJSpeech y LibriTTS (no completada) |
-| T02 | [t2/](t2/) | Preparación del corpus: audio + texto al formato de StyleTTS2 |
-| T03 | [t3/](t3/) | Transcripción fonética con espeak-ng `ca-va` |
-| T04 | [t4/](t4/) | Selección del tokenizador (char-level IPA + RoBERTa-ca como etiquetas) |
-| T05 | [t5/](t5/) | Entrenamiento del PL-BERT valenciano |
-| T06 | [StyleTTS2/](StyleTTS2/) | Entrenamiento de StyleTTS2 (Stage 1 + Stage 2) e inferencia |
-
-Para una guía paso a paso del entrenamiento completo, ver [TRAINING.md](TRAINING.md).
+El trabajo incluye la preparación de un corpus de voz valenciano, el entrenamiento del modelo, y la evaluación de la naturalidad y la fidelidad lingüística de las voces generadas.
 
 ## Estructura del repositorio
 
-Carpeta raíz:
-
-- `README.md` (este archivo)
-- `TRAINING.md`: guía de entrenamiento paso a paso
-
-`StyleTTS2/`: fork de StyleTTS2 (T06).
-
-- `README.md`: documentación original de upstream
-- `README_VALENCIANO.md`: nuestra adaptación
-- `Configs/config_valenciano.yml`
-- `train_first.py`, `train_second.py`, `test_stage1.py`
-- `models.py`, `meldataset.py`
-- `Utils/PLBERT/`: PL-BERT para inferencia
-- `Utils/ASR/`, `Utils/JDC/`: modelos auxiliares pre-entrenados
-- `Demo/`: notebooks de inferencia
-- `Models/LJSpeech/`: checkpoints locales
-
-`t1/`: exploración (T01, incompleto).
-
-`t2/`: preparación de datos (T02).
-
-- `dataset_conversion.ipynb`: script principal
-- `dataset_exp.ipynb`: análisis exploratorio
-- `inspect_hf_dataset.py`
-- Experimentos descartados: whisper, ClearVoice, Mel-Band-Roformer
-
-`t3/`: fonetización (T03).
-
-- `phonemizer_test.py`
-
-`t4/`: tokenizador (T04, sólo documentación).
-
-`t5/`: PL-BERT (T05).
-
-- `T05a_prepare_dataset.py`
-- `T05b_train_plbert.py`
-- `text_utils.py`
-- `dataset_valenciano/`, `token_maps_valenciano.pkl`, `dataset_config.json`
-- `checkpoints_valenciano/`
+```
+styletts2-valenciano/
+├── StyleTTS2/              # Fork adaptado de StyleTTS2 para valenciano
+│   ├── Configs/            # Configuraciones de entrenamiento
+│   ├── Models/             # Arquitecturas de los modelos
+│   ├── Utils/              # Utilidades (incluye PL-BERT)
+│   ├── Demo/               # Notebooks de inferencia
+│   └── train_*.py          # Scripts de entrenamiento
+│
+├── t1/                     # Tarea 1: Exploración del dataset inglés
+│   └── dataset-exploration.ipynb
+│
+├── t2/                     # Tarea 2: Procesamiento y mejora de audio
+│   ├── dataset_exp.ipynb   # Análisis de calidad y duración
+│   ├── clearervoice/       # Herramientas de mejora de audio
+│   ├── whisper_catalan.py  # Transcripción con Whisper
+│   └── espeak-ng/          # Fonetización
+│
+├── t3/                     # Tarea 3: Pruebas de fonetización
+│   └── phonemizer_test.py
+│
+├── t4/                     # Tarea 4: Tokenizador de fonemas
+│   ├── tokenizer_conversion.py
+│   ├── tokenizer_conversion_to_hf.py
+│   └── tokenizer_coverage.ipynb
+│
+└── t5/                     # Tarea 5: Entrenamiento PL-BERT
+    └── PL-BERT/            # Modelo de representación fonética
+        ├── eval.ipynb
+        └── Configs/
+```
 
 ## Requisitos
 
-- Python 3.12.
-- espeak-ng 1.51 o superior, con la variante `ca-va`. Recomendado compilar desde fuente; ver [t3/README.md](t3/README.md).
-- CUDA y GPU para entrenar. Para inferencia basta una GPU de gama media.
-- ffmpeg (lo necesita `torchcodec` al cargar audio).
+- Python 3.12.3
+- ffmpeg version 7
 
-Instalación completa en [TRAINING.md](TRAINING.md#0-pre-requisitos).
-
-## Inferencia con el modelo entrenado
+### Instalación
 
 ```bash
-# Descargar modelo y PL-BERT desde HuggingFace
-mkdir -p StyleTTS2/Models/LJSpeech
-huggingface-cli download gplsi/StyleTTS2-va \
-    Models/LJSpeech/epoch_2nd_00100.pth \
-    Models/LJSpeech/config.yml \
-    --local-dir StyleTTS2/
+# Crear entorno virtual
+python -m venv .venv
+source .venv/bin/activate
 
-huggingface-cli download gplsi/PL-BERT-va \
-    step_50000.t7 config.yml util.py \
-    --local-dir StyleTTS2/Utils/PLBERT/
-
-# Abrir el notebook
-jupyter notebook StyleTTS2/Demo/Inference_LJSpeech.ipynb
+# Instalar dependencias
+pip install -r requirements.txt
 ```
 
-Para mejor calidad usar el notebook con audio de referencia: [StyleTTS2/Colab/StyleTTS2_Demo_LibriTTS.ipynb](StyleTTS2/Colab/StyleTTS2_Demo_LibriTTS.ipynb). Ver más abajo el porqué.
+### Descargar PL-BERT
 
-## Decisiones de diseño
+El modelo requiere los pesos de PL-BERT entrenado para valenciano. Descárgalos desde Hugging Face:
 
-- Tokenizador char-level IPA (178 símbolos) en lugar de WordPiece/BPE. Detalle en [t4/README.md](t4/README.md).
-- PL-BERT entrenado con supervisión semántica de RoBERTa-ca, para que el encoder capture significado además de patrones fonéticos. Detalle en [t5/README.md](t5/README.md).
-- Fonemización a nivel de frase (no palabra por palabra), para preservar efectos fonéticos entre palabras.
+```bash
+# Crear directorio para PL-BERT
+mkdir -p StyleTTS2/Utils/PLBERT/valenciano
 
-## Limitaciones conocidas
+# Descargar los archivos necesarios
+cd StyleTTS2/Utils/PLBERT/valenciano
+wget https://huggingface.co/javiimts/plbert-valenciano/resolve/main/step_5000.t7
+wget https://huggingface.co/javiimts/plbert-valenciano/resolve/main/config.yml
+```
 
-El modelo se entrenó como single-speaker, pero el corpus de Corts Valencianes contiene voces de muchos políticos distintos, todos etiquetados como `speaker_id = 0`. Como consecuencia, la inferencia "texto puro" con `Inference_LJSpeech.ipynb` genera estilos inconsistentes y a veces ruidosos. La inferencia con audio de referencia (`StyleTTS2_Demo_LibriTTS.ipynb`) funciona claramente mejor. Más detalle en [StyleTTS2/README_VALENCIANO.md](StyleTTS2/README_VALENCIANO.md).
+O clona el repositorio completo:
 
-Durante el desarrollo aparecieron varios bugs en el código original (NaN por mismatch de claves al cargar checkpoints, crash de JDC con batch=1, crash del style encoder con mels cortos, BERT con secuencias > 512). Todos están corregidos en este fork y documentados en `StyleTTS2/README_VALENCIANO.md`.
+```bash
+cd StyleTTS2/Utils/PLBERT
+git lfs install
+git clone https://huggingface.co/javiimts/plbert-valenciano
+```
 
-## Seguimiento del proyecto
+## Entrenamiento
 
-Las tareas y el seguimiento se llevaron en [Linear](https://linear.app/tts-valenciano).
+El entrenamiento de StyleTTS2 se realiza en dos etapas.
+
+### Configuración
+
+Antes de entrenar, edita `StyleTTS2/Configs/config_valenciano.yml` y modifica las siguientes rutas:
+
+| Parámetro | Descripción |
+|-----------|-------------|
+| `log_dir` | Directorio donde se guardarán los checkpoints y logs |
+| `data_params.root_path` | Directorio raíz donde se encuentra la carpeta con los `.wav` |
+
+### Stage 1: Pre-training (Acoustic Model)
+
+#### Una sola GPU
+
+El script usa `accelerate` internamente con DDP, pero para **una sola GPU** no es necesario configurar nada. Simplemente ejecuta:
+
+```bash
+cd StyleTTS2
+python -u train_first.py --config_path Configs/config_valenciano.yml
+```
+
+#### Multi-GPU
+
+Para entrenar con **múltiples GPUs**, usa `accelerate launch`:
+
+```bash
+cd StyleTTS2
+accelerate launch --multi_gpu --num_processes=N train_first.py --config_path Configs/config_valenciano.yml
+```
+
+Donde `N` es el número de GPUs a utilizar.
+
+Este stage entrena el decoder, style encoder, text encoder y pitch extractor. La configuración por defecto usa:
+- `epochs_1st: 100`
+- `batch_size: 8`
+- `TMA_epoch: 25` (Text-Mel Alignment empieza en epoch 25)
+
+Los checkpoints se guardan en el directorio especificado en `log_dir` del config.
+
+### Stage 2: Joint Training (con Diffusion)
+
+**Nota:** El autor del repositorio original indica que DDP no funciona correctamente en Stage 2.
+
+Por completar
+
+### Monitorización
+
+Puedes monitorizar el entrenamiento con TensorBoard:
+
+```bash
+tensorboard --logdir /ruta/a/Models/Valenciano/tensorboard
+```
+
+## Inferencia (síntesis de voz)
+Utiliza la libreta ./StyleTTS2/Demo/Inference_LJSpeech.ipynb
+
+## Evaluación
+Por completar
+
+## Tareas
+Todas las tareas serán escritas y documentadas en la plataforma [Linear](https://linear.app/tts-valenciano)
 
 ## Referencias
+[StyleTTS2 Paper](https://arxiv.org/abs/2306.07691)
 
-- Paper StyleTTS2: [Li et al., NeurIPS 2023](https://arxiv.org/abs/2306.07691)
-- Paper PL-BERT: [Li et al., 2023](https://arxiv.org/abs/2301.08810)
-- Repositorio upstream StyleTTS2: [yl4579/StyleTTS2](https://github.com/yl4579/StyleTTS2)
-- Repositorio upstream PL-BERT: [yl4579/PL-BERT](https://github.com/yl4579/PL-BERT)
-- Modelo de catalán: [projecte-aina/roberta-base-ca-v2](https://huggingface.co/projecte-aina/roberta-base-ca-v2)
-- Dataset original: [projecte-aina/corts_valencianes_asr_a](https://huggingface.co/datasets/projecte-aina/corts_valencianes_asr_a)
+[StyleTTS2 Repositorio](https://github.com/yl4579/StyleTTS2)
+
+[Script Fine Tuning Ejemplo](https://github.com/IIEleven11/StyleTTS2FineTune)

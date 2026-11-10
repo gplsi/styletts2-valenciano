@@ -1,17 +1,17 @@
 # Configuración para entrenamiento de StyleTTS2 Valenciano
 # Basado en config.yml original con adaptaciones para valenciano
 
-log_dir: "/media/datos1/tts-valenciano/Models/Valenciano"
+log_dir: "/home/gplsi/GPLSI/codigos/styletts2-valenciano_hpc/StyleTTS2/Logs/tts-valenciano/Models/Valenciano"
 first_stage_path: "first_stage.pth"
-save_freq: 10
-log_interval: 10
+save_freq: 1
+log_interval: 5
 device: "cuda"
 epochs_1st: 100 # TEST: cambiar a 100 para entrenamiento real
-epochs_2nd: 100 # epochs para Stage 2 (joint training)
-batch_size: 4   
-max_len: 400     # máximo de frames
+epochs_2nd: 151 # epochs para Stage 2 (joint training)
+batch_size: 2   
+max_len: 512     # máximo de frames
 
-pretrained_model: ""
+pretrained_model: "/home/gplsi/GPLSI/codigos/styletts2-valenciano_hpc/StyleTTS2/Logs/tts-valenciano/Models/Valenciano/epoch_2nd_00129.pth"
 second_stage_load_pretrained: true
 load_only_params: false
 
@@ -21,12 +21,23 @@ ASR_config: "Utils/ASR/config.yml"
 ASR_path: "Utils/ASR/epoch_00080.pth"
 PLBERT_dir: "Utils/PLBERT/"
 
+
+
+#data_params:
+#  train_data: "Data/train_list.txt"
+#  val_data: "Data/val_list.txt"
+#  root_path: "/leonardo_scratch/fast/EUHPC_D22_034/Voz/"  # directorio raíz donde está wavs/
+#  OOD_data: "Data/OOD_texts.txt"
+#  min_length: 50
+
+
 data_params:
-  train_data: "Data/train_list.txt"
-  val_data: "Data/val_list.txt"
-  root_path: "/media/datos1/tts-valenciano/styletts2_corts_dataset/"  # directorio raíz donde está wavs/
-  OOD_data: "Data/OOD_texts.txt"
-  min_length: 100
+  train_data: "Data/train_list_new.txt" #"Data/train_list_clean.txt"
+  val_data: "Data/val_list_new.txt" #"Data/val_list_clean.txt"
+  #root_path: "/leonardo_scratch/fast/EUHPC_D22_034/Voz/"  # directorio raíz donde está wavs/ (sucios)
+  root_path: "/home/gplsinas/ALIA/datos/Voz/Voz_2/"  # directorio raíz donde está wavs/ (limpio)
+  OOD_data: "Data/OOD_list_new.txt"
+  min_length: 10
 
 preprocess_params:
   sr: 24000
@@ -105,9 +116,9 @@ optimizer_params:
   ft_lr: 0.00001
 
 slmadv_params:
-  min_len: 400
-  max_len: 500
-  batch_percentage: 0.5
+  min_len: 10 #400
+  max_len: 600 #500
+  batch_percentage: 1.0 # 0.5
   iter: 10
   thresh: 5
   scale: 0.01

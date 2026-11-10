@@ -18,6 +18,16 @@ class SLMAdversarialLoss(torch.nn.Module):
         self.skip_update = skip_update
         
     def forward(self, iters, y_rec_gt, y_rec_gt_pred, waves, mel_input_length, ref_text, ref_lengths, use_ind, s_trg, ref_s=None):
+        # PL-BERT (ALBERT) has a hard maximum sequence length (typically 512).
+        # OOD/reference text can exceed this, so we clip text and lengths consistently.
+        bert_model = self.model.bert.module if hasattr(self.model.bert, 'module') else self.model.bert
+        max_text_len = getattr(getattr(bert_model, 'config', None), 'max_position_embeddings', 512)
+        max_text_len = int(max_text_len) if max_text_len is not None else 512
+
+        if ref_text.size(1) > max_text_len:
+            ref_text = ref_text[:, :max_text_len]
+        ref_lengths = torch.clamp(ref_lengths, max=max_text_len)
+
         text_mask = length_to_mask(ref_lengths).to(ref_text.device)
         bert_dur = self.model.bert(ref_text, attention_mask=(~text_mask).int())
         d_en = self.model.bert_encoder(bert_dur).transpose(-1, -2) 
